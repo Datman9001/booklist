@@ -87,6 +87,7 @@ class Store{
     }
     static removeBooks(){
 
+        
     }
 
 }

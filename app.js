@@ -63,49 +63,8 @@ UI.prototype.clearfield = function(){
 }
 
 
-//Event Listeners to add the book
-document.getElementById('book-form').addEventListener('submit',function(e){
-    //Form values
-   const title = document.getElementById('title').value,
-         author = document.getElementById('author').value,
-         isbn = document.getElementById('isbn').value;
-        
-         //Instantiate book
-    const book = new Book(title, author, isbn);
-    //Instantiate UI
-    const ui = new UI();
 
-    //Validate
-    if(title === ''|| author === '' || isbn === '' ){
-        //Error alert
-        ui.showAlert('Please fill in all fields','error');
-    } else{
-        //Add book to list
-       ui.addBookToList(book);
 
-     //ui.showAlert
-     ui.showAlert('Your book was successfully added', 'success');
-
-     //clear field
-
-     ui.clearfield();
-
-    }
-        
-})
-
-//Event Listner for delete
-document.getElementById('book-list').addEventListener('click', function(e){
-     //Instantiate UI
-     const ui = new UI();
-    //prototype delete book
-    ui.deleteBook(e.target);
-
-    //ui.showAlert
-    ui.showAlert('Your book was successfully removed' , 'success');
-
-    e.preventDefault();
-})
 
     //const ui = new UI();
     // const bookD = document.getElementById('book-list');
